@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+:root {
+  --background: #f7f7f7;
+  --foreground: #2d3330;
+  --card: #ffffff;
+  --card-foreground: #2d3330;
+  --popover: #ffffff;
+  --popover-foreground: #2d3330;
+  --primary: #b8d4d4;
+  --primary-foreground: #2c3534;
+  --secondary: #ececec;
+  --secondary-foreground: #2d3330;
+  --muted: #f1f1f1;
+  --muted-foreground: #6b7280;
+  --accent: #e8f2f2;
+  --accent-foreground: #2d3330;
+  --destructive: #dc2626;
+  --destructive-foreground: #fafafa;
+  --border: #e8e8e8;
+  --input: #e8e8e8;
+  --ring: #b8d4d4;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Airbnb-style thin scrollbars for messaging inbox columns */
+@layer utilities {
+  .inbox-shell {
+    height: 100%;
+    min-height: 420px;
+  }
+
+  .scrollbar-inbox {
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #b0b0b0 transparent;
+    overscroll-behavior: contain;
+  }
+
+  .scrollbar-inbox::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-inbox::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-inbox::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0;
+    border-radius: 9999px;
+    min-height: 48px;
+  }
+
+  .scrollbar-inbox::-webkit-scrollbar-thumb:hover {
+    background-color: #8a8a8a;
+  }
+
+  .scrollbar-inbox::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  .scrollbar-inbox::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
